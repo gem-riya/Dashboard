@@ -7,9 +7,11 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const Table = () => {
    const [rowData] = useState([
-       {name: "Toyota", client: "Celica", date: 35000},
-       {name: "Ford", client: "Mondeo", date: 32000},
-       {name: "Porsche", client: "Boxster", date: 72000}
+       {name: "Mndate 1 2022-01-31", client: "Allianz AG", date: '12/06/2022'},
+       {name: "Mndate 1 2022-01-31", client: "Allianz AG", date: '12/06/2022'},
+       {name: "Mndate 1 2022-01-31", client: "Allianz AG", date: '12/06/2022'},
+       {name: "Mndate 1 2022-01-31", client: "Allianz AG", date: '12/06/2022'},
+       {name: "Mndate 1 2022-01-31", client: "Allianz AG", date: '12/06/2022'},
    ]);
    
    const [columnDefs] = useState([
@@ -20,7 +22,7 @@ const Table = () => {
 
    const defaultColDef={
         flex:1
-        
+
    }
 
    return (
