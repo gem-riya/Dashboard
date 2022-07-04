@@ -44,6 +44,7 @@ const Table = () => {
                     <div className=''>
                         {val.title}
                     </div>
+                    
                 </li>
         );
             
