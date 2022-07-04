@@ -5,6 +5,7 @@ import { Sidebar } from './Sidebar';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import Subcategory from './Subcategory';
 
 const Table = () => {
    const [rowData] = useState([
@@ -36,15 +37,15 @@ const Table = () => {
             return (
                 <li
                  key={key} 
-                 className='row'
+                 className='col'
                  onClick={()=>
                   {window.location.pathname=val.link}} 
                  >
                 
                     <div className=''>
                         {val.title}
+                        <Subcategory myList = {val.subNav}/>
                     </div>
-                    
                 </li>
         );
             
