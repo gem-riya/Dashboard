@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { AgGridReact } from 'ag-grid-react';
+import { Sidebar } from './Sidebar';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -15,7 +16,9 @@ const Table = () => {
    ]);
    
    const [columnDefs] = useState([
-       { headerName:'Name' , field: 'name', sortable:true,editable:true, filter:true, checkboxSelection:true,tooltipField:"name"},
+    { headerCheckboxSelection: true, checkboxSelection:true,tooltipField:"checkbox"},
+       { headerName:'Name' , field: 'name', sortable:true,editable:true, filter:true, tooltipField:"name"},
+       
        { headerName:'Client', field: 'client',tooltipField:"client" },
        {headerName:'Last Response Date', field: 'date',tooltipField:"date" }
    ]);
@@ -26,9 +29,30 @@ const Table = () => {
    }
 
    return (
+    <>
+    <div className='sidebar'>
+    <ul className='sidebarlist'>
+        {Sidebar.map((val, key)=>{
+            return (
+                <li
+                 key={key} 
+                 className='row'
+                 onClick={()=>
+                  {window.location.pathname=val.link}} 
+                 >
+                
+                    <div className=''>
+                        {val.title}
+                    </div>
+                </li>
+        );
+            
+        })}
+        </ul>
+    </div> 
        <div 
         className="ag-theme-alpine"
-        style={{height: 400, width: '100%' }}
+        style={{height: 400, width: '80%', paddingLeft:'20%' }}
         >
            <AgGridReact
                rowData={rowData}
@@ -38,6 +62,7 @@ const Table = () => {
                >
            </AgGridReact>
        </div>
+       </>
    );
 };
 
