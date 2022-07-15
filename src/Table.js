@@ -6,6 +6,8 @@ import { Sidebar } from './Sidebar';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import Subcategory from './Subcategory';
+import {Icon} from "./Icon";
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const Table = () => {
    const [rowData] = useState([
@@ -18,7 +20,8 @@ const Table = () => {
    
    const [columnDefs] = useState([
     { headerCheckboxSelection: true, checkboxSelection:true,tooltipField:"checkbox"},
-       { headerName:'Name' , field: 'name', sortable:true,editable:true, filter:true, tooltipField:"name"},
+       { headerName:'Name' , field: 'name', sortable:true,editable:true, filter:true, tooltipField:"name",
+    },
        
        { headerName:'Client', field: 'client',tooltipField:"client" },
        {headerName:'Last Response Date', field: 'date',tooltipField:"date" }
